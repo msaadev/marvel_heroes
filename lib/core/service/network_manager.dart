@@ -33,7 +33,7 @@ class NetworkManager {
       'hash': hash,
       ...query ?? {}
     };
-    return _dio.get(path, queryParameters: queryData);
+    return _dio.get<T>(path, queryParameters: queryData);
   }
 
   
