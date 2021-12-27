@@ -10,7 +10,7 @@ class LoaderImage extends StatelessWidget {
       this.height,
       this.width})
       : super(key: key);
-  final String link,name;
+  final String link, name;
   final BoxFit fit;
   final double? height, width;
 
@@ -20,7 +20,6 @@ class LoaderImage extends StatelessWidget {
       tag: link + name,
       transitionOnUserGestures: true,
       child: CachedNetworkImage(
-        
         imageUrl: link,
         height: height,
         width: width,

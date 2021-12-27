@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:marvel_heroes/core/model/character_model.dart';
-import 'package:marvel_heroes/core/model/comic_model.dart';
-import 'package:marvel_heroes/core/service/network_manager.dart';
+import '../../model/character_model.dart';
+import '../../model/comic_model.dart';
+import '../network_manager.dart';
 
 class CharacterService {
   static CharacterService? _instance;
@@ -35,12 +35,10 @@ class CharacterService {
   Future<ComicModel?> getCharacterComic({
     required String id,
   }) async {
-    var request =
-        await _networkManager.get(path: 'characters/$id/comics', query: {
-      'startYear':2005,
-      'orderBy': 'onsaleDate', 'limit': 10
-    });
-    if (request.statusCode == 200) {      
+    var request = await _networkManager.get(
+        path: 'characters/$id/comics',
+        query: {'startYear': 2005, 'orderBy': 'onsaleDate', 'limit': 10});
+    if (request.statusCode == 200) {
       var data = ComicModel.fromJson(request.data);
       return data;
     }

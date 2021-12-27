@@ -14,7 +14,7 @@ class NetworkManager {
   }
 
   NetworkManager._init() {
-    _baseUrl = 'http://gateway.marvel.com/v1/public/';
+    _baseUrl = 'https://gateway.marvel.com';
     token = '344d40df0c8cc373141c1dc321fae9cf';
     hash = 'bd0722d5750b6362d5ba0212ca36726b';
 
@@ -26,15 +26,8 @@ class NetworkManager {
   Future<Response<T>> get<T>({
     required String path,
     Map<String, dynamic>? query,
-  })  {
-    var queryData = {
-      'apikey': token,
-      'ts': 1,
-      'hash': hash,
-      ...query ?? {}
-    };
-    return _dio.get<T>(path, queryParameters: queryData);
+  }) {
+    var queryData = {'apikey': token, 'ts': 1, 'hash': hash, ...query ?? {}};
+    return _dio.get<T>('/v1/public/' + path, queryParameters: queryData);
   }
-
-  
 }

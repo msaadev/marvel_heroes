@@ -1,10 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:lib_msaadev/lib_msaadev.dart';
-import 'package:marvel_heroes/core/components/image/loader_image.dart';
-import 'package:marvel_heroes/core/constants/app_constants.dart';
-import 'package:marvel_heroes/core/model/character_model.dart';
+import '../image/loader_image.dart';
+import '../../model/character_model.dart';
 
 class CharacterCard extends StatelessWidget {
   final Character character;

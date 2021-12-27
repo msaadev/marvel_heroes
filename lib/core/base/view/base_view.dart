@@ -7,7 +7,13 @@ class BaseView<T extends Store> extends StatefulWidget {
   final Function(T model) onModelReady;
   final Function(T model)? onDispose;
 
-  const BaseView({Key? key, required this.viewModel, required this.onPageBuilder, required this.onModelReady, this.onDispose}) : super(key: key);
+  const BaseView(
+      {Key? key,
+      required this.viewModel,
+      required this.onPageBuilder,
+      required this.onModelReady,
+      this.onDispose})
+      : super(key: key);
 
   @override
   _BaseViewState<T> createState() => _BaseViewState<T>();

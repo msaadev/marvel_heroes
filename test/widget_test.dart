@@ -1,6 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:marvel_heroes/core/service/methods/character_methods.dart';
-import 'package:marvel_heroes/core/service/network_manager.dart';
 
 void main() {
   late final CharacterService _characterService;
@@ -15,8 +14,7 @@ void main() {
   });
 
   test('comics', () async {
-
     var response = await _characterService.getCharacterComic(id: '1011054');
-    expect(isNotNull, response?.data.characters[0].name);
+    expect(isNotNull, response?.data.comic[0].description);
   });
 }

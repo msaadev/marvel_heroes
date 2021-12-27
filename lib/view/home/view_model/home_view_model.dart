@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lib_msaadev/lib_msaadev.dart';
-import 'package:marvel_heroes/core/model/character_model.dart';
-import 'package:marvel_heroes/core/service/methods/character_methods.dart';
+import '../../../core/model/character_model.dart';
+import '../../../core/service/methods/character_methods.dart';
 import 'package:mobx/mobx.dart';
 part 'home_view_model.g.dart';
 
@@ -29,7 +29,6 @@ abstract class _HomeViewModelBase with Store {
   _HomeViewModelBase({
     required this.context,
   }) {
-
     _service = CharacterService.instance;
     getCharacters();
   }

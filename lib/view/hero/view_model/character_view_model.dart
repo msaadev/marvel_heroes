@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lib_msaadev/lib_msaadev.dart';
-import 'package:marvel_heroes/core/model/comic_model.dart';
-import 'package:marvel_heroes/core/service/methods/character_methods.dart';
+import '../../../core/model/comic_model.dart';
+import '../../../core/service/methods/character_methods.dart';
 import 'package:mobx/mobx.dart';
 part 'character_view_model.g.dart';
 
@@ -21,6 +21,9 @@ abstract class _CharacterViewModelBase with Store {
 
   @observable
   bool isLoading = false;
+
+  @computed
+  bool get isComicListNotEmpty => comicList.isNotEmpty;
 
   @observable
   ObservableList<Comic> comicList = ObservableList<Comic>();
