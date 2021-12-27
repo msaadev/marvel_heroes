@@ -1,6 +1,8 @@
 # marvel_heroes
 
-A new Flutter project.
+Developed with Flutter 
+
+![alt text](https://github.com/msaadev/marvel_heroes/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%2013%20Pro%20Max%20-%202021-12-27%20at%2010.50.25.png)
 
 ## Getting Started
 
