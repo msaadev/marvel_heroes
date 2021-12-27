@@ -11,7 +11,8 @@ class CharacterCard extends StatelessWidget {
   final Function()? onTap;
   const CharacterCard({
     Key? key,
-    required this.character, this.onTap,
+    required this.character,
+    this.onTap,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -24,27 +25,28 @@ class CharacterCard extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           LoaderImage(
-            name: character.name ?? '',
+              name: character.name ?? '',
               width: double.infinity,
               link:
                   '${character.thumbnail?.path}.${character.thumbnail?.extension}'),
-          // Positioned(
-          //   top: 0,
-          //   right: 0,
-          //   bottom: 0,
-          //   child: Transform.rotate(
-          //     angle: -pi / 1,
-          //     child: Container(
-          //         color: Colors.red,
-          //         padding: 5.paddingAll,
-          //         alignment: Alignment.bottomCenter,
-          //         child: Text(
-          //           character.name ?? '',
-          //           style: context.textTheme.headline6
-          //               ?.copyWith(color: Colors.white),
-          //         )),
-          //   ),
-          // )
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 0,
+            child: Container(
+              padding: 5.paddingAll,
+              color: Colors.black.withOpacity(.3),
+              alignment: Alignment.center,
+              child: Text(
+                character.name ?? '',
+                textAlign: TextAlign.center,
+                style: context.textTheme.bodyText1?.copyWith(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          )
         ],
       ),
     ).onTap(onTap);
